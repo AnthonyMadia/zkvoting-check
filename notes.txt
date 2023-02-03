@@ -1,0 +1,45 @@
+
+// sk is input to circuit
+// do hash inside circuit that produces public key
+// chekc public key is part of 4 public keys (4 public inputs)
+// iterate and check - if yes then output 1 - no output 0
+
+// 5 inputs (sk and 4 pks)
+// output public
+
+// if this is a country you would need millions of pks
+
+// MERKLE TREES 
+// each of the leaves of the tree are hashes of secret keys
+
+// circuit with merkle tree
+// 3 PRIVATE inputs - array of siblings and secret key AND kEY
+// 1 PUBLIC input - voting ID (hash(sk & VI & something) === Nullifier
+// 2 public outputs - root & Nullifier to prevent double proofs 
+
+// circuit would prove any of the possible sks
+// keys in the tree (0000, 0001, etc.) tell order of hashing
+//   we have to include this in the circuit to do the hashing
+//  in the correct order
+
+// a correct proof will prove you are in the tree
+
+// you need to provide the root, the siblings, and rest of inputs to the circuit
+    // external programs are needed to build this information
+    // circomlibjs
+    // merklize(F, hash, array, nLevels=3) field elements
+
+need to convert key to bits (num2bits)
+    example input 3 --> num2bits --> 011
+    level i - instantiate templates many times with for loops
+    the specific partss
+
+Switcher
+    - leaves the input and outputs crossed or not crossed depending on selector
+Posedion
+Bitify
+    - has num2bits (could have changed in 2023)
+
+inputs to the Switcher component are sibling[i] and low 
+
+`circomtester` can compile circuits and be used to create tests
